@@ -3,7 +3,7 @@
 <div class="app" style="width: 100vw; height: 100vh;">
 
 <nav-bar/>
-<home></home>
+<router-view></router-view>
 
   </div>
 
