@@ -7,7 +7,7 @@
             
         </div>
     <ul  class="menu mt-5 mt-lg-0 flex-column justify-content-center flex-lg-row justify-content-lg-end gap-lg-5 me-3 align-items-lg-center  " :class="{ active: isActive }"  >
-        <li class="menu-link active">Home</li>
+        <router-link to="/home"  active-class="menu-link active" > <li class="menu-link">Home</li></router-link>
         <li class="menu-link">About</li>
         <li class="menu-link">Portfolio</li>
         <li class="menu-link">Contact</li>
@@ -120,9 +120,9 @@ i {
 
 
 .burger {
-    width: 3rem;
-    height: 2.5rem;
-    margin: 1rem;
+    width: 2.5rem;
+    height: 2rem;
+    margin: 0.3rem;
     position: absolute;
     background-color: transparent;
     top: 10px;
@@ -145,12 +145,12 @@ i {
 
 
 .burger.active > span:nth-child(1){
-    transform: rotate(-45deg) translateY(1.5rem);
-    width: 80%;
+    transform: rotate(-45deg) translateY(1.2rem);
+    width: 70%;
 }
 .burger.active > span:nth-child(2){
-    transform: rotate(45deg) translateY(-1.5rem);
-    width: 80%;
+    transform: rotate(45deg) translateY(-1.25rem);
+    width: 70%;
 }
 .burger.active > span:nth-child(3){
     display: none;
