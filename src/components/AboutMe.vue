@@ -1,5 +1,5 @@
 <template>
-  <div class="aboutme-container d-flex align-items-end">
+  <div class="aboutme-container d-flex align-items-center align-items-lg-end ">
     <div
       class="img-photo d-none d-lg-flex justify-content-center align-items-end position-lg-absolute"
     >
