@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router"
 import inBuilding from './components/inBuilding.vue'
-import Home from './components/Home.vue'
-
+import HomeView from './view/HomeView.vue'
+import AboutMe from './components/AboutMe.vue'
+import test from './components/test.vue'
 
 
 const routes: Array<any> = [
@@ -15,9 +16,27 @@ const routes: Array<any> = [
     {
 
         path: '/home',
-        component: Home,
+        component: HomeView,
         name: 'Home'
+    },
+
+    {
+
+        path: '/aboutme',
+        component: AboutMe,
+        name: 'AboutMe'
+
+
+    },
+    {
+
+        path: '/test',
+        component: test,
+        name: 'test'
+
+
     }
+
 ]
 
 const router = createRouter({

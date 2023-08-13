@@ -8,7 +8,7 @@
         </div>
     <ul  class="menu mt-5 mt-lg-0 flex-column justify-content-center flex-lg-row justify-content-lg-end gap-lg-5 me-3 align-items-lg-center  " :class="{ active: isActive }"  >
         <router-link to="/home"  active-class="menu-link active" > <li class="menu-link">Home</li></router-link>
-        <li class="menu-link">About</li>
+       <router-link to="/aboutme" active-class="menu-link active" > <li class="menu-link">About</li> </router-link>
         <li class="menu-link">Portfolio</li>
         <li class="menu-link">Contact</li>
         <li class="menu-link">Other</li>
@@ -69,6 +69,7 @@ export default defineComponent({
 @import '../styles/GlobalStyles.scss';
 
 header {
+    
     z-index: 100;
     padding: 2rem 1rem;
     margin-right:1rem;
@@ -93,7 +94,8 @@ header {
    
     list-style: none;
     color: white;
-    font-size: 2rem;
+    font-size: 1.6rem;
+    
 
 }
 
@@ -101,9 +103,16 @@ header {
 .menu-link.active {
     display: flex;
     justify-content: center;
-    width: 10rem;
+    width: 11%;
     background-color: $primary-color;
     border-radius: 50px;
+}
+
+@media screen and (max-width:1330px) {
+    .menu-link.active {
+        width: 12%;
+    }
+    
 }
 
 

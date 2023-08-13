@@ -1,27 +1,24 @@
 <template>
   <div
     class="custom-container"
-    style="background-color: #1b1f24; height: 100vh"
+    style="background-color: #1b1f24"
   >
-    <div class="background-image">
-
-
-
+    <div class="background-image ">
 
 
 
     </div>
 
-    <div class="information">
+    <div class="information ">
       <div class="row h-100" style="margin: auto;  ">
         <div class="col-sm-12 col-lg-6 d-flex align-items-center " >
-          <welcome-text
+          <welcome-text @visibilityOn="emitHomeOn"
             class="d-flex ps-3 "
           ></welcome-text>
         </div>
         <div class="col-6 d-none d-lg-flex  h-100 align-items-center">
           <div class="row d-none d-lg-flex flex-column d-flex justify-content-around align-items-end me-5  "  style="height: 60%;" >
-            <div class="col-6 mb-5">
+            <div class="col-6">
 
               
         <ExperienceAboutMe >
@@ -50,7 +47,7 @@
       
       </div>
 
-      <div class="col-6">
+      <div class="col-6 position-relative">
         <div class="social-media-bar d-none d-lg-flex flex-column ">
           <span class="text"><a>Social & Contact</a></span>
           <span class="icons mt-2">
@@ -66,22 +63,35 @@
         </div>
         </div>
         </div>
+      
       </div>
+        
     </div>
-
 
     
   </div>
+ 
+  
+
+
+   
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+
 import ExperienceAboutMe from "./HomeSection/Experience&AboutMe.vue";
 import WelcomeText from "./HomeSection/WelcomeText.vue";
 
 export default defineComponent({
-  components: { WelcomeText, ExperienceAboutMe },
-  setup() {},
+  components: { WelcomeText, ExperienceAboutMe, },
+
+  methods: {
+    emitHomeOn() {
+      this.$emit('visibilityEmit', true)
+    }
+  }
+ 
 });
 </script>
 
@@ -90,6 +100,9 @@ export default defineComponent({
   width: 100vw;
   height: 100vh;
   position: relative;
+  
+  
+  
 
   .background-image {
     background-image: url("../assets/Home_elements/background-photo.png");
@@ -99,6 +112,7 @@ export default defineComponent({
     width: 100vw;
     height: 100vh;
     position: absolute;
+    
   }
 
 
@@ -122,6 +136,7 @@ export default defineComponent({
   }
 
   .social-media-bar{
+    
       .text {
 
         a {
@@ -130,6 +145,8 @@ export default defineComponent({
           font-weight: 600;
           color: white;
         }
+
+        
 
 
         
@@ -140,7 +157,17 @@ export default defineComponent({
         display: flex;
         gap: 1.2rem;
         align-items: start;
+
+        i:hover {
+          transform: scale(1.2);
+          transition: 0.3s ease-in-out ;
+          cursor: pointer;
+        }
       }
+
+      
+      
+      
 
 
   }
@@ -151,4 +178,6 @@ export default defineComponent({
 
 
 }
+
+
 </style>

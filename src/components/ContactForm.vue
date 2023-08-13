@@ -53,8 +53,6 @@ export default defineComponent({
             your_mail: '',
             your_text: '',
             validStatus: false,
-           
-
                
         }
     },

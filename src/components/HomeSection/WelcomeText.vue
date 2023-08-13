@@ -22,7 +22,7 @@
         
 
 
-             <div class="circle mt-2">
+             <div class="circle mt-2 " @click="emitVisibilityAboutMe">
                 <i class="fas fa-angle-down"></i>
 
             </div>
@@ -39,9 +39,11 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-    setup() {
-        
-    },
+    methods: {
+        emitVisibilityAboutMe() {
+            this.$emit('visibilityOn', true)
+        }
+    }
 })
 </script>
 
@@ -130,6 +132,11 @@ export default defineComponent({
         i{
             font-size: 3rem;
         }
+
+
+    }
+    .circle:hover {
+        cursor: pointer;
     }
 }
 
