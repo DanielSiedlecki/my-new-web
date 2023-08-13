@@ -1,7 +1,9 @@
 <template>
     <div class="view-container" >
     <home @visibilityEmit="aboutMeOn()" ></home>
-    <about-me v-if="aboutMeVisibility" ></about-me>
+    <div ref="aboutMe">
+    <about-me  v-if="aboutMeVisibility"  ></about-me>
+    </div>
     
     </div>
 
@@ -23,18 +25,25 @@ export default defineComponent({
             aboutMeVisibility: false
         }
     },
-
-    methods: {
-        aboutMeOn() {
-             this.aboutMeVisibility = true
+    methods:{
+     aboutMeOn() {
+        this.aboutMeVisibility = true;
+        this.$nextTick(() => {
+            const aboutMeRef = this.$refs.aboutMe as HTMLElement;
+            if (aboutMeRef) {
+                aboutMeRef.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
         }
     }
+}
+    
 
 
 
 
         
-    },
+    
 )
 </script>
 
