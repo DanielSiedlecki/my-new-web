@@ -1,5 +1,5 @@
 <template>
-  <div class="aboutme-container d-flex align-items-center align-items-lg-end ">
+  <div class="aboutme-container d-flex align-items-center align-items-lg-end">
     <div
       class="img-photo d-none d-lg-flex justify-content-center align-items-end position-lg-absolute"
     >
@@ -28,7 +28,7 @@
         </div>
 
         <div
-          class="col-12 col-lg-6 d-flex flex-column align-items-center align-items-lg-start position-relative left" 
+          class="col-12 col-lg-6 d-flex flex-column align-items-center align-items-lg-start position-relative left"
         >
           <span class="title w-lg-100 d-flex"> &lt;frontend&gt; </span>
 
@@ -62,7 +62,7 @@
         >
           <span class="title"> &lt;backend&gt; </span>
 
-          <span class="text d-flex align-items-center flex-column ">
+          <span class="text d-flex align-items-center flex-column">
             <a class="">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -110,10 +110,6 @@ export default defineComponent({
   width: 100vw;
   height: 100vh;
   position: absolute;
-  
-
-  
-  
 
   .img-photo {
     width: 100%;
@@ -136,8 +132,6 @@ export default defineComponent({
     position: absolute;
     height: 100%;
 
-
-
     .custom-position {
       top: 20%;
       position: relative;
@@ -158,7 +152,6 @@ export default defineComponent({
     .text {
       width: 40%;
 
-
       a {
         max-width: 80%;
         display: block;
@@ -172,94 +165,75 @@ export default defineComponent({
           height: 3vmax;
         }
       }
-
-
-      
     }
-
-
   }
-
-
 }
 @media screen and (max-width: 992px) {
-.aboutme-container{
+  .aboutme-container {
     position: absolute;
     height: 100%;
     overflow: a;
 
+    .text-title {
+      height: auto;
+      .title {
+        width: auto;
+      }
+      .text {
+        width: 100%;
+        height: 100%;
 
-
-
-
-    .text-title{
-        height: auto;
-        .title {
-            width: auto;
+        a {
+          font-size: 0.8rem;
+          max-width: 90%;
         }
-    .text {
-      width: 100%;
-      height: 100%;
 
+        .icons {
+          img {
+            width: 1.8rem;
+            height: 1.8rem;
+          }
+        }
 
-      a {
-        font-size: 0.8rem;
-        max-width: 90%;
-      }
+        @media screen and (max-width: 700px) {
+          a {
+            font-size: 0.7rem;
+            max-width: 90%;
+          }
 
-      .icons {img {
-        width: 1.8rem;
-        height: 1.8rem;
-      }}
+          .icons {
+            img {
+              width: 1.6rem;
+              height: 1.6rem;
+            }
+          }
+        }
+        @media screen and (max-width: 500px) {
+          a {
+            font-size: 0.65rem;
+            max-width: 90%;
+          }
 
+          .icons {
+            img {
+              width: 1.5rem;
+              height: 1.5rem;
+            }
+          }
+        }
+        @media screen and (max-width: 300px) {
+          a {
+            font-size: 0.6rem;
+            max-width: 95%;
+          }
 
-
-      @media screen and (max-width: 700px) {
-
-        a {
-        font-size: 0.7rem;
-        max-width: 90%;
-      }
-
-      .icons {img {
-        width: 1.6rem;
-        height: 1.6rem;
-      }}
-        
-      }
-      @media screen and (max-width: 500px) {
-
-        a {
-        font-size: 0.65rem;
-        max-width: 90%;
-      }
-
-      .icons {img {
-        width: 1.5rem;
-        height: 1.5rem;
-      }}
-        
-      }
-      @media screen and (max-width: 300px) {
-
-        a {
-        font-size: 0.6rem;
-        max-width: 95%;
-      }
-
-      .icons {img {
-        width: 1.4rem;
-        height: 1.4rem;
-      }}
-        
-      }
-      
-
-
-
-      
-     
-
+          .icons {
+            img {
+              width: 1.4rem;
+              height: 1.4rem;
+            }
+          }
+        }
       }
     }
     .right {
@@ -269,6 +243,5 @@ export default defineComponent({
       left: auto;
     }
   }
-  }
-  
+}
 </style>
