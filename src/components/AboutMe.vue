@@ -17,7 +17,7 @@
             
 
             
-          <span class="title">About Me</span>
+          <span class="title d-flex justify-content-center ">About Me</span>
           <span class="text d-flex justify-content-center">
             <a
               >Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -31,7 +31,7 @@
         <div
           class="col- col-lg-6 d-flex flex-column align-items-center align-items-lg-start position-relative left"
         >
-          <span class="title w-lg-100 d-flex justify-content-center"> &lt;frontend&gt; </span>
+          <span class="title w-lg-100 d-flex justify-content-center "> &lt;frontend&gt; </span>
 
           <span class="text d-flex flex-column align-items-center">
             <a
@@ -61,7 +61,7 @@
         <div
           class="col-12 col-lg-6 d-flex flex-column align-items-center align-items-lg-end position-relative right"
         >
-          <span class="title d-flex justify-content-center"> &lt;backend&gt; </span>
+          <span class="title d-flex justify-content-center "> &lt;backend&gt; </span>
 
           <span class="text d-flex align-items-center flex-column">
             <a class="">
@@ -182,7 +182,7 @@ export default defineComponent({
       height: 100%;
       
       .title {
-        width: auto;
+        width: 100%;
         
       }
       .text {
