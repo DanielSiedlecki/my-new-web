@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router"
 import inBuilding from './components/inBuilding.vue'
 import HomeView from './view/HomeView.vue'
-import AboutMe from './components/AboutMe.vue'
-import test from './components/test.vue'
+
+
 
 
 const routes: Array<any> = [
@@ -20,22 +20,8 @@ const routes: Array<any> = [
         name: 'Home'
     },
 
-    {
-
-        path: '/aboutme',
-        component: AboutMe,
-        name: 'AboutMe'
-
-
-    },
-    {
-
-        path: '/test',
-        component: test,
-        name: 'test'
-
-
-    }
+   
+    
 
 ]
 

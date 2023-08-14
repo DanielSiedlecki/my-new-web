@@ -1,21 +1,22 @@
 <template>
-  <div class="aboutme-container d-flex align-items-center align-items-lg-end">
+  <div class="aboutme-container d-flex align-items-center align-items-lg-end ">
     <div
-      class="img-photo d-none d-lg-flex justify-content-center align-items-end position-lg-absolute"
+      class="img-photo d-none d-lg-flex justify-content-center align-items-start"
     >
-      <img src=".././assets/my-photo-aboutme.png" class="" alt="" />
+      <img src=".././assets/my-photo-aboutme.png " class="" alt="" />
     </div>
 
-    <div class="text-title w-100 d-flex d-lg-block">
+    <div class="text-title d-flex d-lg-block">
       <div
         class="row w-100 custom-position d-flex-align-items-center gap-2 gap-lg-0"
         style="margin: auto"
       >
-        <div class="col-12 d-flex d-lg-none justify-content-center mt-3">
-          <img src=".././assets/my-photo-aboutme.png" class="" alt="" />
-        </div>
+        
+        <div class="col-12 d-flex d-lg-none flex-row justify-content-center"><img src=".././assets/my-photo-aboutme.png " class="" alt="" style="width: 40%;" /></div>
+        <div class="col-12 d-flex d-lg-none flex-column justifyt-content-center align-items-center">
+            
 
-        <div class="col-12 d-flex d-lg-none flex-column align-items-center">
+            
           <span class="title">About Me</span>
           <span class="text d-flex justify-content-center">
             <a
@@ -25,12 +26,12 @@
               type and scrambled it to make a type specimen book.</a
             ></span
           >
-        </div>
-
+          </div>
+      
         <div
-          class="col-12 col-lg-6 d-flex flex-column align-items-center align-items-lg-start position-relative left"
+          class="col- col-lg-6 d-flex flex-column align-items-center align-items-lg-start position-relative left"
         >
-          <span class="title w-lg-100 d-flex"> &lt;frontend&gt; </span>
+          <span class="title w-lg-100 d-flex justify-content-center"> &lt;frontend&gt; </span>
 
           <span class="text d-flex flex-column align-items-center">
             <a
@@ -60,7 +61,7 @@
         <div
           class="col-12 col-lg-6 d-flex flex-column align-items-center align-items-lg-end position-relative right"
         >
-          <span class="title"> &lt;backend&gt; </span>
+          <span class="title d-flex justify-content-center"> &lt;backend&gt; </span>
 
           <span class="text d-flex align-items-center flex-column">
             <a class="">
@@ -109,7 +110,9 @@ export default defineComponent({
   background-color: #1b1f24;
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: relative;
+ 
+
 
   .img-photo {
     width: 100%;
@@ -144,7 +147,7 @@ export default defineComponent({
     }
 
     .title {
-      font-size: 4vmax;
+      font-size: 3vmax;
       color: white;
       width: 40%;
     }
@@ -172,16 +175,20 @@ export default defineComponent({
   .aboutme-container {
     position: absolute;
     height: 100%;
-    overflow: a;
+    top: 100%;
+    
 
     .text-title {
-      height: auto;
+      height: 100%;
+      
       .title {
         width: auto;
+        
       }
       .text {
         width: 100%;
         height: 100%;
+        
 
         a {
           font-size: 0.8rem;
@@ -210,7 +217,7 @@ export default defineComponent({
         }
         @media screen and (max-width: 500px) {
           a {
-            font-size: 0.65rem;
+            font-size: 0.8rem;
             max-width: 90%;
           }
 

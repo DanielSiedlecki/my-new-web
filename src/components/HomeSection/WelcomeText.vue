@@ -70,6 +70,7 @@ export default defineComponent({
 
   i {
     font-size: 32px;
+    color: white;
   }
 }
 

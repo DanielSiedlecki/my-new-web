@@ -45,6 +45,7 @@
                   <i class="fab fa-github"></i>
                   <i class="fas fa-envelope"></i>
                   <i class="fas fa-phone"></i>
+                  
                 </span>
               </div>
             </div>
@@ -77,6 +78,7 @@ export default defineComponent({
   width: 100vw;
   height: 100vh;
   position: relative;
+
 
   .background-image {
     background-image: url("../assets/Home_elements/background-photo.png");
@@ -122,16 +124,33 @@ export default defineComponent({
       gap: 1.2rem;
       align-items: start;
 
+      i{
+        font-size: 1.8rem;
+        color: white;
+      }
+      
+
+      
+
       i:hover {
         transform: scale(1.2);
         transition: 0.3s ease-in-out;
         cursor: pointer;
       }
+
+
+      
     }
+    
   }
+  
 
   .information {
     height: 100%;
   }
+
+
+  
 }
+
 </style>

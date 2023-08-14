@@ -1,9 +1,9 @@
 <template>
 
-<div class="app" style="width: 100vw; height: 100vh;">
+<div class="app">
 
-<nav-bar/>
-<router-view></router-view>
+<nav-bar></nav-bar>
+<router-view class=""></router-view>
 
   </div>
 
@@ -27,7 +27,11 @@ export default defineComponent({
 
 <style lang="scss">
 @import '~@/../mdb/scss/index.free.scss';
+@import './styles/GlobalStyles.scss';
+ .app {
 
-
+  background-color: $secondary-color ;
+  
+ }
 
 </style>

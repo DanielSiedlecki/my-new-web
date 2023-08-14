@@ -1,193 +1,157 @@
 <template>
-
-    <header class="d-flex " :class="{ active: isActive }"  >
-
-        <div class="logo d-none d-lg-flex mb-3 " >
-            <img src="../assets/Navbar/navbar-logo.png" alt="logo-navbar" style="height: 80%;">
-            
-        </div>
-    <ul  class="menu mt-5 mt-lg-0 flex-column justify-content-center flex-lg-row justify-content-lg-end gap-lg-5 me-3 align-items-lg-center  " :class="{ active: isActive }"  >
-        <router-link to="/home"  active-class="menu-link active" > <li class="menu-link">Home</li></router-link>
-       <router-link to="/aboutme" active-class="menu-link active" > <li class="menu-link">About</li> </router-link>
+  <div class="navbar-container d-flex position-absolute " :class="{ 'active': isActive }">
+    
+<span class="nav w-100 d-lg-flex flex-column flex-lg-row align-items-center align-items-lg-end justify-content-center justify-content-lg-between" :class="{'d-flex': isActive}">
+    <span class="ms-0 mb-0 mb-2 me-3 ms-lg-3 mb-lg-2 mt-0 mt-lg-2 "
+          ><img src="../assets/Navbar/navbar-logo.png"  alt=""
+        /></span>
+     <span class="links d-flex  ">
+      <ul
+        class="all-link d-flex flex-column flex-lg-row align-items-center gap-4 me-3 mt-2"
+      >
+        <router-link to='/home'  active-class="menu-link active"><li class="menu-link ">Home</li></router-link>
+        <li class="menu-link">About</li>
         <li class="menu-link">Portfolio</li>
         <li class="menu-link">Contact</li>
-        <li class="menu-link">Other</li>
-
-
-        <div class="contact-section d-flex d-lg-none justify-content-between mt-4">
-            <i class="fab fa-linkedin"></i>
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-github"></i>
-            <i class="fas fa-envelope"></i>
-            <i class="fas fa-phone"></i>
-        </div>
+        <li class="menu-link">Lorem</li>
         
-    </ul>
+      </ul>
+      </span>   </span>
 
-    <button @click="activeMenu()" :class="{ active: isActive }" class="burger d-flex d-lg-none  animate__animated animate__fadeIn flex-column justify-content-between ">
-                <span></span>
-                <span></span>
-                <span></span>
+   
+  
 
-            </button>
-
-            </header>
+    <span class="burger d-flex d-lg-none" :class="{active: isActive}" @click="activeMenu"  >
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  </div>
 </template>
 
-
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
-    setup() {
-        
+  setup() {},
+
+  data() {
+    return {
+      isActive: false,
+    };
+  },
+
+  methods: {
+    activeMenu() {
+      this.isActive = !this.isActive;
+      console.log("siema");
+      console.log(this.isActive);
     },
-
-    data() {
-        return { 
-            isActive: false
-        }
-    },
-
-    methods: {
-        activeMenu() {
-            this.isActive = !this.isActive
-            console.log("siema")
-            console.log(this.isActive)
-        }
-    }
-
-
-
-
-})
+  },
+});
 </script>
 
+<style lang="scss" scoped>
+@import "../styles/GlobalStyles.scss";
 
-<style lang="scss">
+.navbar-container {
+  width: 100%;
+  
+  z-index: 100000;
+  
 
-@import '../styles/GlobalStyles.scss';
-
-header {
-    
-    z-index: 100;
-    padding: 2rem 1rem;
-    margin-right:1rem;
-    width: 100vw;
-    position: absolute
-    
-}
-
-.menu {
-    height: 100%;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    display: flex;
-    
-        
-}
-
-
-
-.menu-link {
-   
-    list-style: none;
-    color: white;
-    font-size: 1.6rem;
     
 
-}
+    .links {
+    .all-link {
+      width: 100%;
 
+      .menu-link {
+        list-style: none;
+        color: white;
+        font-size: 1.6rem;
+      }
 
-.menu-link.active {
-    display: flex;
-    justify-content: center;
-    width: 11%;
-    background-color: $primary-color;
-    border-radius: 50px;
-}
+      .menu-link.active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 8rem;
+        height: 3rem;
+        background-color: $primary-color;
+        border-radius: 50px;
+      }
 
-@media screen and (max-width:1330px) {
-    .menu-link.active {
-        width: 12%;
+    
     }
-    
-}
+    }
 
+    .navbar.mobile.active {
+      display: flex;
+    }
+  
 
-.contact-section {
-
-    width: 60%
-}
-
-i {
-    font-size: 2rem ;
-    color: white;
-
-}
-
-
-.burger {
+  .burger {
     width: 2.5rem;
-    height: 2rem;
+    height: 2.5rem;
     margin: 0.3rem;
-    position: absolute;
     background-color: transparent;
-    top: 10px;
+    position: absolute;
     right: 20px;
-    border: none;
-    box-shadow: none;
+    top: 10px;
     transition: ease-in 0.5s;
-    
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
 
-
-.burger span {
-    width: 100%;
-    height: 12%;
-    background-color: white;
-    border-radius: 40px;
-
-}
-
-
-
-.burger.active > span:nth-child(1){
-    transform: rotate(-45deg) translateY(1.2rem);
-    width: 70%;
-}
-.burger.active > span:nth-child(2){
-    transform: rotate(45deg) translateY(-1.25rem);
-    width: 70%;
-}
-.burger.active > span:nth-child(3){
-    display: none;
-}
-
-
-@media only screen and (max-width: 992px){
-
-    header.active {
-        height: 100%;
-        background-color: black;
+    span {
+      width: 100%;
+      height: 12%;
+      background-color: white;
+      border-radius: 40px;
     }
-    .menu {
+  }
+
+  .burger.active > span:nth-child(1) {
+    transform: rotate(-45deg) translateY(0.8rem);
+    width: 70%;
+  }
+  .burger.active > span:nth-child(2) {
+    transform: rotate(45deg) translateY(-0.9rem);
+    width: 70%;
+  }
+  .burger.active > span:nth-child(3) {
+    display: none;
+  }
+}
+
+
+
+  @media screen and (max-width: 992px) {
+    .nav {
         display: none;
         
     }
+    .navbar-container.active {
+      background-color: black;
+      height: 100%;
 
-    .menu.active{
-        display: flex;
-        height: 80%;
-        
-    }
-    .menu-link.active {
-        border: none;
-        text-decoration: underline;
-        background-color: transparent;
-        display: block;
-    }
+      
+     
+       .all-link{
+        .menu-link.active{
+          width: auto;
+          background-color: transparent;
+          text-decoration: underline;
+        }
+        }
+      }
+      }
+    
 
-}
+
+
+
+  
 </style>
