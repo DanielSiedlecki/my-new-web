@@ -1,7 +1,7 @@
 <template>
   <div
     class="eduexp d-flex align-items-center p-5"
-    style="top: 5vh; position: relative"
+    style="top: 5vh; "
   >
     <div class="row custom-position">
       <div class="col-12 col-lg-6 d-flex justify-content-center">
@@ -20,19 +20,17 @@
                 specimen book.</span
               >
               <span
-                class="button-with-icon d-flex align-items-center gap-1 justify-content-end m-2" v-if="!visibilityWorkList"
+                class="button-with-icon d-flex align-items-center gap-1 justify-content-end m-2 ms-5 ms-lg-0 " v-if="!visibilityWorkList"
                 @click="
-                  () => {
-                    visibilityWorkList = true;
-                  }
+                  scrollTo()
                 "
                 ><a>Show more job history</a><i class="fas fa-angle-down"></i
               ></span>
             </span>
           </div>
 
-          <div class="line border" v-if="visibilityWorkList"></div>
-          <div class="col-12" v-if="visibilityWorkList">
+          <div class="line border" v-if="visibilityWorkList" ref="worklist"></div>
+          <div class="col-12" v-if="visibilityWorkList" >
             <span class="ongoing-work d-flex flex-column">
               <span class="title">WEB DEVELOPER</span>
               <span class="company">ZETO-ŚWIDNICA</span>
@@ -45,7 +43,7 @@
                 specimen book.</span
               >
               <span
-                class="button-with-icon d-flex align-items-center gap-1 justify-content-end m-2"
+                class="button-with-icon d-flex align-items-center gap-1 justify-content-end m-2 ms-5 ms-lg-0 "
                 @click="
                   () => {
                     visibilityWorkList = false;
@@ -58,7 +56,7 @@
         </div>
       </div>
 
-      <div class="col-12 col-lg-6 d-flex flex-column mx-auto mt-2">
+      <div class="col-12 col-lg-6 d-flex flex-column mt-2" > 
         <span class="header"><heading>Education</heading></span>
         <span class="title">NETWORK ENGINEERING</span>
         <span class="company">WSB MERITUM UNIVERSITY</span>
@@ -80,11 +78,28 @@ import heading from "./elements/heading.vue";
 
 export default defineComponent({
   components: { heading },
-  data() {
-    return {
-      visibilityWorkList: false,
-    };
-  },
+    data() {
+        return {
+            visibilityWorkList: false,
+        };
+    },
+
+      methods:{
+          scrollTo(){
+              this.visibilityWorkList = true
+            this.$nextTick(() => {
+                const aboutMeRef = this.$refs.worklist as HTMLElement;
+                if (aboutMeRef) {
+                    aboutMeRef.scrollIntoView({ behavior: "smooth" });
+                }
+            });
+          }
+          
+
+          
+
+      }
+  
 });
 </script>
 
@@ -93,6 +108,7 @@ export default defineComponent({
 .eduexp {
   height: auto;
   width: 100%;
+  
 
   .title {
     color: white;
@@ -137,7 +153,7 @@ export default defineComponent({
 }
 
 .custom-position {
-  left: 15%;
+  left: 10%;
   position: relative;
 }
 
@@ -221,7 +237,7 @@ export default defineComponent({
   }
 
   .button-with-icon {
-    width: 100%;
+    max-width: 100%;
     font-size: 1.8vmax;
   }
 }

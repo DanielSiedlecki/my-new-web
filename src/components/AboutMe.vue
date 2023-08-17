@@ -20,7 +20,7 @@
         >
 
         <span class="button-more d-flex justify-content-end"
-          ><span class="d-flex flex-column"
+          ><span class="d-flex flex-column " @click="emitHomeOn()"
             ><h1>More About Me</h1>
             <div class="line"></div></span
         ></span>
@@ -40,7 +40,12 @@
 import { defineComponent } from "vue";
 import heading from "./elements/heading.vue";
 export default defineComponent({
-  components: { heading },
+    components: { heading },
+    methods: {
+    emitHomeOn() {
+            this.$emit("visibilityEmit", true);
+        },
+  }
 });
 </script>
 
@@ -155,7 +160,7 @@ img {
 
   img {
     width: 70%;
-    max-width: 200px;
+    max-width: 500px;
     height: 100%;
     
   }

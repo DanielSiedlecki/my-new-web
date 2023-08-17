@@ -1,13 +1,15 @@
 <template>
   <div class="view-container">
-    <home @visibilityEmit="aboutMeOn()"></home>
+    <home @visibilityEmit="scrollTo($refs.aboutMe, true, false)"></home>
     <div ref="aboutMe">
-      <about-me v-if="aboutMeVisibility"></about-me>
+      <about-me
+        v-if="aboutMeVisibility"
+        @visibilityEmit="scrollTo($refs.ExpEdu, true, true)"
+      ></about-me>
     </div>
 
-    <div ref="ExpEdu" v-if="aboutMeVisibility">
-
-        <edu-exp></edu-exp>
+    <div ref="ExpEdu" >
+      <edu-exp v-if="expEduVisibility"></edu-exp>
     </div>
   </div>
 </template>
@@ -23,13 +25,15 @@ export default defineComponent({
   data() {
     return {
       aboutMeVisibility: false,
+      expEduVisibility: false,
     };
   },
   methods: {
-    aboutMeOn() {
-      this.aboutMeVisibility = true;
+    scrollTo(section: any, aboutMe: boolean, expEdu: boolean) {
+      this.aboutMeVisibility = aboutMe;
+      this.expEduVisibility = expEdu;
       this.$nextTick(() => {
-        const aboutMeRef = this.$refs.aboutMe as HTMLElement;
+        const aboutMeRef = section as HTMLElement;
         if (aboutMeRef) {
           aboutMeRef.scrollIntoView({ behavior: "smooth" });
         }
