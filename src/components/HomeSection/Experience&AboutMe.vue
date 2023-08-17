@@ -40,7 +40,7 @@
 
   .buttom-text {
     color: white;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .custom-underline {
