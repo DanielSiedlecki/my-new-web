@@ -15,6 +15,7 @@
 </template>
 
 <style lang="scss" scoped>
+@import "../../styles/GlobalStyles.scss";
 .bar {
   position: relative;
 }
@@ -46,21 +47,18 @@
   .custom-underline {
     height: 2px;
     background-color: white;
-    width: 100%;
+    width: 90%;
     border-radius: 20px;
   }
 }
 
-
-
-
-
 .learn-more-buttom:hover {
-    .buttom-text{
-      cursor: pointer;
-    }
-    .custom-underline{
-      background-color: blue;
-    }
+  .buttom-text {
+    cursor: pointer;
+    color: $primary-color-2;
+  }
+  .custom-underline {
+    background-color: $primary-color-2;
+  }
 }
 </style>
