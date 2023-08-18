@@ -54,6 +54,8 @@
             </span>
           </div>
         </div>
+
+        
       </div>
 
       <div class="col-12 col-lg-6 d-flex flex-column mt-2" > 
@@ -69,7 +71,16 @@
         >
       </div>
     </div>
+      
   </div>
+
+  <div class=" button-section row d-flex  justify-content-center mb-3">
+
+          <div class="col-12 custom-width-buttom d-flex justify-content-around flex-column flex-lg-row gap-3 ">
+            <button>PORTFOLIO</button>
+            <button>TECHNOLOGY</button>
+          </div>
+        </div>
 </template>
 
 <script lang="ts">
@@ -161,6 +172,21 @@ export default defineComponent({
     width: 60%;
 }
 
+.button-section button {
+
+  background-color: transparent;
+  color: white;
+  font-size: 1.4vmax ;
+  border: none;
+  border-bottom: 2px solid;
+  box-shadow: none;
+}
+
+.custom-width-buttom {
+  width: 50%;
+}
+
+
 /* Mobile */
 
 @media screen and (max-width:992px) {
@@ -215,6 +241,21 @@ export default defineComponent({
 .line {
     width: 100%;
 }
+
+
+.button-section button {
+
+  background-color: transparent;
+  color: white;
+  font-size: 1.8vmax ;
+  border: none;
+  border-bottom: 2px solid;
+  box-shadow: none;
+}
+.custom-width-buttom {
+  width: 35%;
+}
+
 }
 
 
