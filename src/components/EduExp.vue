@@ -181,6 +181,9 @@ export default defineComponent({
   border-bottom: 2px solid;
   box-shadow: none;
 }
+.button-section button:hover {
+  color: $primary-color-2;
+}
 
 .custom-width-buttom {
   width: 50%;
@@ -252,6 +255,8 @@ export default defineComponent({
   border-bottom: 2px solid;
   box-shadow: none;
 }
+
+
 .custom-width-buttom {
   width: 35%;
 }
