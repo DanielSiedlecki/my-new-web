@@ -19,8 +19,8 @@
           >
           <li class="menu-link">About</li>
           <li class="menu-link">Portfolio</li>
+          <li class="menu-link">Skills</li>
           <li class="menu-link">Contact</li>
-          <li class="menu-link">Lorem</li>
         </ul>
       </span>
     </span>
