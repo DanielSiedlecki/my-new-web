@@ -6,32 +6,29 @@
       ><h1 class="display-4">Website in Building</h1>
       <span class="display-6 d-flex flex-column flex-lg-row align-items-center">
         <a class="me-3">please come back later or</a>
-        <router-link to="/home"><a style="color: #3b71ca;"> you can see draft version <span style="text-decoration: underline;">link</span></a></router-link>
+        <router-link to="/home"
+          ><a style="color: #3b71ca">
+            you can see draft version
+            <span style="text-decoration: underline">link</span></a
+          ></router-link
+        >
       </span>
     </span>
 
     <contact-form></contact-form>
-
-
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import ContactForm from './ContactForm.vue'
-
-
+import { defineComponent } from "vue";
+import ContactForm from "./ContactForm.vue";
 
 export default defineComponent({
-    components: {
-        ContactForm,
-        
-        
-    }
-})
-       
+  components: {
+    ContactForm,
+  },
+});
 </script>
-
 
 <style lang="scss" scoped>
 .inBuilding-container {
@@ -41,8 +38,5 @@ export default defineComponent({
   position: absolute;
   z-index: 100000;
   overflow: auto;
-
-
-  
 }
 </style>

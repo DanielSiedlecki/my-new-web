@@ -10,7 +10,8 @@
     <div ref="ExpEdu">
       <edu-exp v-if="expEduVisibility"></edu-exp>
     </div>
-    <skills></skills>
+
+    <skills v-if="aboutMeVisibility"></skills>
   </div>
 </template>
 
