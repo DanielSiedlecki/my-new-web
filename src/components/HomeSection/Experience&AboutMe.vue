@@ -20,7 +20,7 @@
   position: relative;
 }
 .title h1 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: white;
   text-transform: uppercase;

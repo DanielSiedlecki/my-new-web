@@ -5,7 +5,10 @@
       :class="{ 'd-flex': isActive }"
     >
       <span class="ms-0 mb-0 mb-2 me-3 ms-lg-3 mb-lg-2 mt-0 mt-lg-2"
-        ><img src="../assets/Navbar/navbar-logo.png" alt=""
+        ><img
+          src="../assets/Navbar/navbar-logo.png"
+          alt="nav_bar_logo"
+          style="width: 70%"
       /></span>
       <span class="links d-flex">
         <ul
@@ -49,8 +52,6 @@ export default defineComponent({
   methods: {
     activeMenu() {
       this.isActive = !this.isActive;
-      console.log("siema");
-      console.log(this.isActive);
     },
   },
 });
@@ -71,7 +72,7 @@ export default defineComponent({
       .menu-link {
         list-style: none;
         color: white;
-        font-size: 1.6rem;
+        font-size: 1.2rem;
       }
 
       .menu-link.active {
@@ -79,7 +80,7 @@ export default defineComponent({
         justify-content: center;
         align-items: center;
         width: 8rem;
-        height: 3rem;
+        height: 2.5rem;
         background-color: $primary-color;
         border-radius: 50px;
       }

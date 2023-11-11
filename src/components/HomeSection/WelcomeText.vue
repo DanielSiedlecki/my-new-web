@@ -76,9 +76,9 @@ export default defineComponent({
 
 @media screen and (min-width: 992px) {
   .title {
-    font-size: 4rem;
+    font-size: 3.2vmax;
     .upper_text {
-      font-size: 3.5rem;
+      font-size: 3.2vmax;
     }
   }
 
@@ -93,8 +93,8 @@ export default defineComponent({
   }
 
   .circle {
-    width: 88px;
-    height: 88px;
+    max-width: 80px;
+    max-height: 80px;
 
     i {
       font-size: 3rem;

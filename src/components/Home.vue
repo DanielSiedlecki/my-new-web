@@ -2,7 +2,7 @@
   <div class="custom-container" style="background-color: #1b1f24">
     <div class="background-image"></div>
 
-    <div class="information">
+    <div class="information mt-2">
       <div class="row h-100" style="margin: auto">
         <div class="col-sm-12 col-lg-6 d-flex align-items-center">
           <welcome-text
@@ -13,9 +13,8 @@
         <div class="col-6 d-none d-lg-flex h-100 align-items-center">
           <div
             class="row d-none d-lg-flex flex-column d-flex justify-content-around align-items-end me-5"
-            style="height: 60%"
           >
-            <div class="col-6">
+            <div class="col-8">
               <ExperienceAboutMe>
                 <template #title>My Experience</template>
                 <template #text>
@@ -25,7 +24,7 @@
                 </template>
               </ExperienceAboutMe>
             </div>
-            <div class="col-6">
+            <div class="col-8">
               <ExperienceAboutMe>
                 <template #title> About Me</template>
                 <template #text>
@@ -36,7 +35,7 @@
               </ExperienceAboutMe>
             </div>
 
-            <div class="col-6 position-relative">
+            <div class="col-8 position-relative">
               <div class="social-media-bar d-none d-lg-flex flex-column">
                 <span class="text"><a>Social & Contact</a></span>
                 <span class="icons mt-2">
