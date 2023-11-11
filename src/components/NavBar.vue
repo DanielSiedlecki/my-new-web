@@ -1,27 +1,32 @@
 <template>
-  <div class="navbar-container d-flex position-absolute " :class="{ 'active': isActive }">
-    
-<span class="nav w-100 d-lg-flex flex-column flex-lg-row align-items-center align-items-lg-end justify-content-center justify-content-lg-between" :class="{'d-flex': isActive}">
-    <span class="ms-0 mb-0 mb-2 me-3 ms-lg-3 mb-lg-2 mt-0 mt-lg-2 "
-          ><img src="../assets/Navbar/navbar-logo.png"  alt=""
-        /></span>
-     <span class="links d-flex  ">
-      <ul
-        class="all-link d-flex flex-column flex-lg-row align-items-center gap-4 me-3 mt-2"
-      >
-        <router-link to='/home'  active-class="menu-link active"><li class="menu-link ">Home</li></router-link>
-        <li class="menu-link">About</li>
-        <li class="menu-link">Portfolio</li>
-        <li class="menu-link">Contact</li>
-        <li class="menu-link">Lorem</li>
-        
-      </ul>
-      </span>   </span>
+  <div class="navbar-container d-flex" :class="{ active: isActive }">
+    <span
+      class="nav w-100 d-lg-flex flex-column flex-lg-row align-items-center align-items-lg-end justify-content-center justify-content-lg-between"
+      :class="{ 'd-flex': isActive }"
+    >
+      <span class="ms-0 mb-0 mb-2 me-3 ms-lg-3 mb-lg-2 mt-0 mt-lg-2"
+        ><img src="../assets/Navbar/navbar-logo.png" alt=""
+      /></span>
+      <span class="links d-flex">
+        <ul
+          class="all-link d-flex flex-column flex-lg-row align-items-center gap-4 me-3 mt-2"
+        >
+          <router-link to="/home" active-class="menu-link active"
+            ><li class="menu-link">Home</li></router-link
+          >
+          <li class="menu-link">About</li>
+          <li class="menu-link">Portfolio</li>
+          <li class="menu-link">Contact</li>
+          <li class="menu-link">Lorem</li>
+        </ul>
+      </span>
+    </span>
 
-   
-  
-
-    <span class="burger d-flex d-lg-none" :class="{active: isActive}" @click="activeMenu"  >
+    <span
+      class="burger d-flex d-lg-none"
+      :class="{ active: isActive }"
+      @click="activeMenu"
+    >
       <span></span>
       <span></span>
       <span></span>
@@ -56,13 +61,10 @@ export default defineComponent({
 
 .navbar-container {
   width: 100%;
-  
   z-index: 100000;
-  
+  position: absolute;
 
-    
-
-    .links {
+  .links {
     .all-link {
       width: 100%;
 
@@ -81,15 +83,12 @@ export default defineComponent({
         background-color: $primary-color;
         border-radius: 50px;
       }
+    }
+  }
 
-    
-    }
-    }
-
-    .navbar.mobile.active {
-      display: flex;
-    }
-  
+  .navbar.mobile.active {
+    display: flex;
+  }
 
   .burger {
     width: 2.5rem;
@@ -126,32 +125,24 @@ export default defineComponent({
   }
 }
 
+@media screen and (max-width: 992px) {
+  .nav {
+    display: none;
+    height: 100%;
+  }
+  .navbar-container.active {
+    background-color: black;
+    height: 100vh;
+    top: 0;
+    position: sticky;
 
-
-  @media screen and (max-width: 992px) {
-    .nav {
-        display: none;
-        
+    .all-link {
+      .menu-link.active {
+        width: auto;
+        background-color: transparent;
+        text-decoration: underline;
+      }
     }
-    .navbar-container.active {
-      background-color: black;
-      height: 100%;
-
-      
-     
-       .all-link{
-        .menu-link.active{
-          width: auto;
-          background-color: transparent;
-          text-decoration: underline;
-        }
-        }
-      }
-      }
-    
-
-
-
-
-  
+  }
+}
 </style>
