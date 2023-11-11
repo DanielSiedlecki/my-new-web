@@ -155,22 +155,6 @@ export default defineComponent({
   width: 60%;
 }
 
-.button-section button {
-  background-color: transparent;
-  color: white;
-  font-size: 1.4vmax;
-  border: none;
-  border-bottom: 2px solid;
-  box-shadow: none;
-}
-.button-section button:hover {
-  color: $primary-color-2;
-}
-
-.custom-width-buttom {
-  width: 50%;
-}
-
 /* Mobile */
 
 @media screen and (max-width: 992px) {
@@ -224,19 +208,6 @@ export default defineComponent({
 
   .line {
     width: 100%;
-  }
-
-  .button-section button {
-    background-color: transparent;
-    color: white;
-    font-size: 1.8vmax;
-    border: none;
-    border-bottom: 2px solid;
-    box-shadow: none;
-  }
-
-  .custom-width-buttom {
-    width: 35%;
   }
 }
 
