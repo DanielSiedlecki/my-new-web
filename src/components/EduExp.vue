@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="eduexp d-flex align-items-center p-5"
-    style="top: 5vh; "
-  >
+  <div class="eduexp d-flex align-items-center p-5" style="top: 5vh">
     <div class="row custom-position">
       <div class="col-12 col-lg-6 d-flex justify-content-center">
         <div class="row d-flex gap-4">
@@ -20,17 +17,20 @@
                 specimen book.</span
               >
               <span
-                class="button-with-icon d-flex align-items-center gap-1 justify-content-end m-2 ms-5 ms-lg-0 " v-if="!visibilityWorkList"
-                @click="
-                  scrollTo()
-                "
+                class="button-with-icon d-flex align-items-center gap-1 justify-content-end m-2 ms-5 ms-lg-0"
+                v-if="!visibilityWorkList"
+                @click="scrollTo()"
                 ><a>Show more job history</a><i class="fas fa-angle-down"></i
               ></span>
             </span>
           </div>
 
-          <div class="line border" v-if="visibilityWorkList" ref="worklist"></div>
-          <div class="col-12" v-if="visibilityWorkList" >
+          <div
+            class="line border"
+            v-if="visibilityWorkList"
+            ref="worklist"
+          ></div>
+          <div class="col-12" v-if="visibilityWorkList">
             <span class="ongoing-work d-flex flex-column">
               <span class="title">WEB DEVELOPER</span>
               <span class="company">ZETO-ŚWIDNICA</span>
@@ -43,7 +43,7 @@
                 specimen book.</span
               >
               <span
-                class="button-with-icon d-flex align-items-center gap-1 justify-content-end m-2 ms-5 ms-lg-0 "
+                class="button-with-icon d-flex align-items-center gap-1 justify-content-end m-2 ms-5 ms-lg-0"
                 @click="
                   () => {
                     visibilityWorkList = false;
@@ -54,11 +54,9 @@
             </span>
           </div>
         </div>
-
-        
       </div>
 
-      <div class="col-12 col-lg-6 d-flex flex-column mt-2" > 
+      <div class="col-12 col-lg-6 d-flex flex-column mt-2">
         <span class="header"><heading>Education</heading></span>
         <span class="title">NETWORK ENGINEERING</span>
         <span class="company">WSB MERITUM UNIVERSITY</span>
@@ -71,16 +69,7 @@
         >
       </div>
     </div>
-      
   </div>
-
-  <div class=" button-section row d-flex  justify-content-center mb-3">
-
-          <div class="col-12 custom-width-buttom d-flex justify-content-around flex-column flex-lg-row gap-3 ">
-            <button>PORTFOLIO</button>
-            <button>TECHNOLOGY</button>
-          </div>
-        </div>
 </template>
 
 <script lang="ts">
@@ -89,28 +78,23 @@ import heading from "./elements/heading.vue";
 
 export default defineComponent({
   components: { heading },
-    data() {
-        return {
-            visibilityWorkList: false,
-        };
+  data() {
+    return {
+      visibilityWorkList: false,
+    };
+  },
+
+  methods: {
+    scrollTo() {
+      this.visibilityWorkList = true;
+      this.$nextTick(() => {
+        const aboutMeRef = this.$refs.worklist as HTMLElement;
+        if (aboutMeRef) {
+          aboutMeRef.scrollIntoView({ behavior: "smooth" });
+        }
+      });
     },
-
-      methods:{
-          scrollTo(){
-              this.visibilityWorkList = true
-            this.$nextTick(() => {
-                const aboutMeRef = this.$refs.worklist as HTMLElement;
-                if (aboutMeRef) {
-                    aboutMeRef.scrollIntoView({ behavior: "smooth" });
-                }
-            });
-          }
-          
-
-          
-
-      }
-  
+  },
 });
 </script>
 
@@ -119,7 +103,6 @@ export default defineComponent({
 .eduexp {
   height: auto;
   width: 100%;
-  
 
   .title {
     color: white;
@@ -149,7 +132,7 @@ export default defineComponent({
 
   .button-with-icon {
     font-size: 1vmax;
-    color: white; 
+    color: white;
     max-width: 60%;
 
     a {
@@ -169,14 +152,13 @@ export default defineComponent({
 }
 
 .line {
-    width: 60%;
+  width: 60%;
 }
 
 .button-section button {
-
   background-color: transparent;
   color: white;
-  font-size: 1.4vmax ;
+  font-size: 1.4vmax;
   border: none;
   border-bottom: 2px solid;
   box-shadow: none;
@@ -189,111 +171,96 @@ export default defineComponent({
   width: 50%;
 }
 
-
 /* Mobile */
 
-@media screen and (max-width:992px) {
-    .eduexp{
+@media screen and (max-width: 992px) {
+  .eduexp {
     .title {
-    color: white;
-    font-weight: 600;
-    font-size: 4vmax;
-    max-height: 60px;
-  }
+      color: white;
+      font-weight: 600;
+      font-size: 4vmax;
+      max-height: 60px;
+    }
 
-  .company {
-    color: white;
-    font-weight: 400;
-    font-size: 1.5vmax;
-    letter-spacing: 2px;
-  }
+    .company {
+      color: white;
+      font-weight: 400;
+      font-size: 1.5vmax;
+      letter-spacing: 2px;
+    }
 
-  .date {
-    color: white;
-    font-size: 1.5vmax;
-  }
+    .date {
+      color: white;
+      font-size: 1.5vmax;
+    }
 
-  .text {
-    color: white;
-    max-width: 70%;
-    font-size: 1.5vmax;
-    font-weight: 300;
-    height: 100%;
-  }
+    .text {
+      color: white;
+      max-width: 70%;
+      font-size: 1.5vmax;
+      font-weight: 300;
+      height: 100%;
+    }
 
-  .button-with-icon {
-    font-size: 1.5vmax;
-    color: white;
-    width: 70%;
+    .button-with-icon {
+      font-size: 1.5vmax;
+      color: white;
+      width: 70%;
 
-    a {
-      font-weight: 500p;
+      a {
+        font-weight: 500p;
+      }
+    }
+
+    .button-with-icon:hover {
+      color: $primary-color-2;
+      cursor: pointer;
     }
   }
 
-  .button-with-icon:hover {
-    color: $primary-color-2;
-    cursor: pointer;
+  .custom-position {
+    left: auto;
   }
-}
 
-.custom-position {
-  left: auto;
-}
-
-.line {
+  .line {
     width: 100%;
-}
-
-
-.button-section button {
-
-  background-color: transparent;
-  color: white;
-  font-size: 1.8vmax ;
-  border: none;
-  border-bottom: 2px solid;
-  box-shadow: none;
-}
-
-
-.custom-width-buttom {
-  width: 35%;
-}
-
-}
-
-
-
-@media screen and (max-width:576px) {
-    .eduexp{
-    .title {
-    color: white;
-    font-weight: 600;
-    font-size: 3vmax;
-    max-height: 65px;
   }
 
-  .text {
+  .button-section button {
+    background-color: transparent;
     color: white;
-    max-width: 90%;
-    font-size: 1.5vmax;
-    font-weight: 300;
-    height: 100%;
-  }
-
-  .button-with-icon {
-    max-width: 100%;
     font-size: 1.8vmax;
+    border: none;
+    border-bottom: 2px solid;
+    box-shadow: none;
+  }
+
+  .custom-width-buttom {
+    width: 35%;
   }
 }
 
+@media screen and (max-width: 576px) {
+  .eduexp {
+    .title {
+      color: white;
+      font-weight: 600;
+      font-size: 3vmax;
+      max-height: 65px;
+    }
 
+    .text {
+      color: white;
+      max-width: 90%;
+      font-size: 1.5vmax;
+      font-weight: 300;
+      height: 100%;
+    }
 
+    .button-with-icon {
+      max-width: 100%;
+      font-size: 1.8vmax;
+    }
+  }
 }
-
-
-
-
-
 </style>
