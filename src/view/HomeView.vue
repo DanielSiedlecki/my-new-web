@@ -7,10 +7,10 @@
         @visibilityEmit="scrollTo($refs.ExpEdu, true, true)"
       ></about-me>
     </div>
-
-    <div ref="ExpEdu" >
+    <div ref="ExpEdu">
       <edu-exp v-if="expEduVisibility"></edu-exp>
     </div>
+    <skills></skills>
   </div>
 </template>
 
@@ -19,9 +19,10 @@ import { defineComponent } from "vue";
 import AboutMe from "../components/AboutMe.vue";
 import Home from "../components/Home.vue";
 import EduExp from "../components/EduExp.vue";
+import Skills from "../components/Skills.vue";
 
 export default defineComponent({
-  components: { Home, AboutMe, EduExp },
+  components: { Home, AboutMe, EduExp, Skills },
   data() {
     return {
       aboutMeVisibility: false,
