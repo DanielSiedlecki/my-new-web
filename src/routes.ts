@@ -12,34 +12,34 @@ const routes: Array<any> = [
         path: '/',
         component: inBuilding,
         name: 'inBuilding',
-        meta: {title: 'inBuilding' as string}
-        
+        meta: { title: 'inBuilding' as string }
+
     },
     {
 
         path: '/home',
         component: HomeView,
         name: 'Home',
-        meta: {title: 'Home' as string}
+        meta: { title: 'Home' as string }
     },
 
-   
-    
+
+
 
 ]
 
 const router = createRouter({
-   
+
     history: createWebHistory(),
     linkExactActiveClass: 'active',
-     routes,
+    routes,
 })
 
 
 router.beforeEach((to) => {
-  
 
-  document.title = (to.meta?.title as string) ?? 'Default Title'
+
+    document.title = (to.meta?.title as string) ?? 'Default Title'
 })
 
 export default router
