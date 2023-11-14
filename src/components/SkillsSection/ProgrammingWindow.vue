@@ -52,9 +52,5 @@ export default defineComponent({
   .custom-container {
     width: 60vw;
   }
-  @media screen and (max-height: 520px) {
-    .custom-container {
-    }
-  }
 }
 </style>
