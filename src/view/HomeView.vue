@@ -11,7 +11,8 @@
       <edu-exp v-if="expEduVisibility"></edu-exp>
     </div>
 
-    <skills v-if="aboutMeVisibility"></skills>
+    <skills v-if="!aboutMeVisibility"></skills>
+    <my-projects></my-projects>
   </div>
 </template>
 
@@ -21,9 +22,10 @@ import AboutMe from "../components/AboutMe.vue";
 import Home from "../components/Home.vue";
 import EduExp from "../components/EduExp.vue";
 import Skills from "../components/Skills.vue";
+import MyProjects from "../components/MyProjects.vue";
 
 export default defineComponent({
-  components: { Home, AboutMe, EduExp, Skills },
+  components: { Home, AboutMe, EduExp, Skills, MyProjects },
   data() {
     return {
       aboutMeVisibility: false,
