@@ -67,12 +67,12 @@ export default defineComponent({
         listContainer.clientWidth
       ) {
         this.leftArrowVisible = true;
+        this.rightArrowVisible = true;
       }
       if (
         listContainer.scrollLeft + listContainer.clientWidth >=
         listContainer.scrollWidth
       ) {
-        console.log("Jesteś na końcu przewijania w prawo!");
         this.rightArrowVisible = false;
         this.leftArrowVisible = true;
       }
@@ -80,7 +80,6 @@ export default defineComponent({
         listContainer.scrollLeft + listContainer.scrollWidth ===
         listContainer.scrollWidth
       ) {
-        console.log("koniec");
         this.leftArrowVisible = false;
         this.rightArrowVisible = true;
       }
