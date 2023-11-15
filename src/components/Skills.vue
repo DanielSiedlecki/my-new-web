@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="title">
-      <h1>Skills</h1>
+      <p><span class="slash">/</span> SKILLS</p>
     </div>
     <div class="row mx-auto">
       <div
@@ -63,12 +63,33 @@ export default defineComponent({
   overflow: hidden;
 
   .title {
-    text-align: center;
-
-    h1 {
+    width: 100%;
+    p {
       color: white;
-      font-size: 4rem;
-      letter-spacing: 2px;
+      font-weight: 600;
+      font-size: 36px;
+      letter-spacing: 1px;
+
+      .slash {
+        color: #081bc1;
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .title {
+      width: 100%;
+      margin-left: 2%;
+      p {
+        color: white;
+        font-weight: 600;
+        font-size: 20px;
+        letter-spacing: 1px;
+
+        .slash {
+          color: #081bc1;
+        }
+      }
     }
   }
 }
