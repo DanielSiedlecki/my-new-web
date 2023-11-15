@@ -2,13 +2,15 @@
   <div
     class="container-fluid skills-container d-flex flex-column align-items-center"
   >
-    <div class="title">
+    <div class="title d-flex justify-content-start mt-2">
       <span class="description">
         <p><span class="slash">/</span> MY PROJECTS</p>
         <h1>It is my portfolio</h1>
       </span>
     </div>
-    <div class="icons d-flex justify-content-end gap-3">
+    <div
+      class="icons d-flex justify-content-center justify-content-lg-end gap-3"
+    >
       <span
         v-if="leftArrowVisible"
         class="icon-circle d-flex justify-content-center align-items-center"
@@ -30,7 +32,7 @@
       </span>
     </div>
     <div class="scrollable-list mt-4" ref="listContainer">
-      <ul class="d-flex gap-5 flex-row" style="list-style: none">
+      <ul class="d-flex gap-5 flex-row mt-5" style="list-style: none">
         <li><projectElement></projectElement></li>
         <li><projectElement></projectElement></li>
         <li><projectElement></projectElement></li>
@@ -50,13 +52,16 @@ import projectElement from "./MyProjectsSection/projectElement.vue";
 export default defineComponent({
   components: { projectElement },
   mounted() {
-    const listContainer = this.$refs.listContainer as HTMLElement;
-    listContainer.addEventListener("scroll", this.handleScroll);
+    (this.$refs.listContainer as HTMLElement).addEventListener(
+      "scroll",
+      this.handleScroll
+    );
   },
   data() {
     return {
       leftArrowVisible: false,
       rightArrowVisible: true,
+      listContainer: this.$refs.listContainer as HTMLElement,
     };
   },
   methods: {
@@ -71,7 +76,7 @@ export default defineComponent({
       }
       if (
         listContainer.scrollLeft + listContainer.clientWidth >=
-        listContainer.scrollWidth
+        listContainer.scrollWidth - 1
       ) {
         this.rightArrowVisible = false;
         this.leftArrowVisible = true;
@@ -111,16 +116,16 @@ export default defineComponent({
   justify-content: center;
   .title {
     width: 80%;
-    margin-left: 5%;
-
     .description {
       h1 {
         color: white;
+        letter-spacing: 1px;
       }
       p {
         color: white;
         font-weight: 600;
         font-size: 24px;
+        letter-spacing: 1px;
 
         .slash {
           color: #081bc1;
@@ -128,15 +133,6 @@ export default defineComponent({
       }
     }
   }
-  .scrollable-list {
-    overflow-x: auto;
-    white-space: nowrap;
-    width: 100%;
-  }
-  .scrollable-list::-webkit-scrollbar {
-    size: 0;
-  }
-
   .icons {
     width: 100%;
     justify-content: center;
@@ -155,6 +151,49 @@ export default defineComponent({
       i:hover {
         cursor: pointer;
       }
+    }
+  }
+  .scrollable-list {
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    height: 100vh;
+  }
+  .scrollable-list::-webkit-scrollbar {
+    size: 0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .skills-container {
+    .title {
+      margin-left: 2%;
+      width: 100%;
+      .description {
+        margin-left: 5%;
+        h1 {
+          color: white;
+          font-size: 28px;
+          justify-self: center;
+        }
+        p {
+          color: white;
+          font-weight: 600;
+          font-size: 16px;
+
+          .slash {
+            color: #081bc1;
+          }
+        }
+      }
+    }
+    .icons {
+      order: 3;
+      margin: 0;
+    }
+
+    .scrollable-list {
+      height: 100%;
     }
   }
 }
