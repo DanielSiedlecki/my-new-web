@@ -1,16 +1,16 @@
 <template>
-  <div class="element-container d-flex flex-column">
-    <div class="row align-items-center flex-row d-flex ms-3 mt-3">
-      <div class="col-8 title m,">
-        <h1>Auth System</h1>
-      </div>
-      <div class="col-4 icon">
+  <div class="element-container d-flex flex-column justify-content-center">
+    <div class="row align-items-start flex-column d-flex ms-3 mt-3">
+      <div class="col-4 icon mb-3">
         <div
           class="circle d-flex justify-content-center align-items-center"
           style=""
         >
           <i class="fab fa-node" style="color: white; font-size: 36px"></i>
         </div>
+      </div>
+      <div class="col-8 title">
+        <h1>Auth System</h1>
       </div>
     </div>
     <div class="row description ms-3 mt-3">
@@ -45,13 +45,19 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "../../styles/GlobalStyles.scss";
+
+.container {
+  width: 100vw;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
 .element-container {
   white-space: nowrap;
-  min-width: 300px;
-  min-height: 350px;
-  height: 50vh;
+  min-width: 450px;
+  min-height: 450px;
   border-radius: 50px;
-  background-color: #1b1f24;
+  background-color: $second-background-color;
 
   .description {
     p {
@@ -59,6 +65,7 @@ export default defineComponent({
       color: white;
       font-weight: 300;
       letter-spacing: 0.5px;
+      font-size: 14px;
     }
   }
   .title {
@@ -67,7 +74,7 @@ export default defineComponent({
     color: white;
   }
   h1 {
-    font-size: 32px;
+    font-size: 28px;
     white-space: normal;
   }
   .icon-links {
@@ -83,11 +90,6 @@ export default defineComponent({
   width: 64px;
   background-color: $primary-color-2;
   border-radius: 64px;
-}
-
-.element-container:hover {
-  transform: scale(1.2);
-  cursor: pointer;
 }
 
 @media screen and (max-width: 1200px) {
