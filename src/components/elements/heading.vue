@@ -1,6 +1,6 @@
 <template>
-  <span class="heading d-flex my-auto"
-    ><a class="custom-color">/</a><a><slot></slot></a
+  <span class="heading d-flex my-auto mb-2"
+    ><a class="custom-color">/&nbsp</a><a><slot></slot></a
   ></span>
 </template>
 
@@ -25,7 +25,7 @@ export default defineComponent({
     color: white;
   }
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 600;
 
   @media (max-width: 992px) {
     a {
