@@ -4,13 +4,13 @@
 
     <div class="information mt-2">
       <div class="row h-100" style="margin: auto">
-        <div class="col-sm-12 col-lg-6 d-flex align-items-center">
+        <div class="col-sm-12 col-lg-5 d-flex align-items-center">
           <welcome-text
             @visibilityOn="emitHomeOn"
             class="d-flex ps-3"
           ></welcome-text>
         </div>
-        <div class="col-6 d-none d-lg-flex h-100 align-items-center">
+        <div class="col-7 d-none d-lg-flex h-100 align-items-center">
           <div
             class="row d-none d-lg-flex flex-column d-flex justify-content-around align-items-end me-5"
           >
