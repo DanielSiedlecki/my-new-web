@@ -1,10 +1,9 @@
 <template>
   <div class="welcome-text d-flex flex-column">
-    <div class="line"></div>
-
     <div class="title d-flex flex-column">
-      <span class="upper_text"> I'm Daniel, a </span>
-      <span class="lower_text">Web Developer</span>
+      <div class="line"></div>
+      <div><h1 class="typingEffect__line1">I'm Daniel, a</h1></div>
+      <div><h1 class="typingEffect__line2">Web Developer</h1></div>
     </div>
 
     <div class="description">
@@ -33,6 +32,42 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+h1 {
+  width: 0;
+  margin-right: 5px;
+  overflow: hidden;
+  border-right: 2px solid transparent;
+  white-space: nowrap;
+  font-size: 12vmin;
+  color: white;
+}
+.typingEffect__line1 {
+  animation: typing 2s steps(30) forwards, blink 1s 3;
+}
+
+.typingEffect__line2 {
+  animation: typing 2.5s steps(35) 3s forwards, blink 1s 3s 3;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  45% {
+    border-color: transparent;
+  }
+  50%,
+  100% {
+    border-color: white;
+  }
+}
 .welcome-text {
   position: relative;
 }
@@ -41,16 +76,6 @@ export default defineComponent({
   height: 2vmin;
   width: 45vw;
   background-color: white;
-}
-
-.title {
-  font-weight: 500;
-  color: white;
-  font-size: 12vmin;
-
-  .upper_text {
-    font-size: 10vmin;
-  }
 }
 
 .description {
