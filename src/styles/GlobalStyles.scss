@@ -18,6 +18,17 @@ html {
 .mg-left{
     margin-left: 5%;
 }
+
+.custom-width {
+    max-width: 40%;
+}
+
+.custom-position {
+    position: relative;
+    top: 10vh;
+    left: 10vh;
+}
+
 // Animation Styles //
 .highlighted {
     transition: filter 0.3s ease-in, transform 0.3s ease-in;
@@ -26,7 +37,7 @@ html {
 }
 
 .not-highlighted {
-    filter: brightness(40%);
+    filter: brightness(80%);
     transition: filter 0.3s ease-in, transform 0.3s ease-in;
 }
 
