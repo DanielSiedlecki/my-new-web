@@ -16,9 +16,22 @@ $second-background-color: #232B35;
 
 html {
     font-size: 16px;
-    
-   
-
+}
+.mg-left{
+    margin-left: 5%;
+}
+// Animation Styles //
+.highlighted {
+    transition: filter 0.3s ease-in, transform 0.3s ease-in;
+    transform: scale(1.2);
+    cursor: pointer;
 }
 
+.not-highlighted {
+    filter: brightness(40%);
+    transition: filter 0.3s ease-in, transform 0.3s ease-in;
+}
 
+.not-highlighted-off {
+    transition: filter 0.3s ease-in, transform 0.3s ease-in;
+}
