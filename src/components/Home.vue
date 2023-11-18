@@ -39,11 +39,19 @@
               <div class="social-media-bar d-none d-lg-flex flex-column">
                 <span class="text"><a>Social & Contact</a></span>
                 <span class="icons mt-2">
-                  <i class="fab fa-linkedin"></i>
-                  <i class="fab fa-facebook"></i>
-                  <i class="fab fa-github"></i>
-                  <i class="fas fa-envelope"></i>
-                  <i class="fas fa-phone"></i>
+                  <i
+                    v-for="(item, index) in iconsList"
+                    :key="index"
+                    @mouseover="hoverElementEffect(index)"
+                    @mouseleave="resetElementEffect()"
+                    :class="{
+                      highlighted: index === hoveredIndex,
+                      'not-highlighted':
+                        index !== hoveredIndex && hoveredEffect,
+                      'not-highlighted-off': !hoveredEffect,
+                      [item]: true,
+                    }"
+                  ></i>
                 </span>
               </div>
             </div>
@@ -63,15 +71,36 @@ import WelcomeText from "./HomeSection/WelcomeText.vue";
 export default defineComponent({
   components: { WelcomeText, ExperienceAboutMe },
 
+  data() {
+    return {
+      iconsList: [
+        "fab fa-linkedin",
+        "fab fa-facebook",
+        "fab fa-github",
+        "fas fa-phone",
+      ],
+      hoveredIndex: null,
+      hoveredEffect: false,
+    };
+  },
   methods: {
     emitHomeOn() {
       this.$emit("visibilityEmit", true);
+    },
+    hoverElementEffect(index: any) {
+      this.hoveredIndex = index;
+      this.hoveredEffect = true;
+    },
+    resetElementEffect() {
+      this.hoveredIndex = null;
+      this.hoveredEffect = false;
     },
   },
 });
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/GlobalStyles.scss";
 .custom-container {
   width: 100vw;
   height: 100vh;
@@ -123,12 +152,6 @@ export default defineComponent({
       i {
         font-size: 1.8rem;
         color: white;
-      }
-
-      i:hover {
-        transform: scale(1.2);
-        transition: 0.3s ease-in-out;
-        cursor: pointer;
       }
     }
   }
