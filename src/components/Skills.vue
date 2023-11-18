@@ -1,9 +1,10 @@
 <template>
-  <div class="container">
-    <div class="title">
-      <p><span class="slash">/</span> SKILLS</p>
-    </div>
-    <div class="row mx-auto">
+  <div class="container mb-2">
+    <span
+      class="d-flex justify-content-center justify-content-lg-start custom-width"
+      ><heading>Skills</heading></span
+    >
+    <div class="row">
       <div
         class="col-12 col-lg-7 d-flex justify-content-center justify-content-lg-end"
       >
@@ -24,6 +25,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
+import Heading from "./elements/heading.vue";
 import OtherSillsWindow from "./SkillsSection/OtherSillsWindow.vue";
 import ProgrammingWindow from "./SkillsSection/ProgrammingWindow.vue";
 interface SkillItem {
@@ -35,7 +37,7 @@ interface ComponentData {
   iconList: SkillItem[];
 }
 export default defineComponent({
-  components: { ProgrammingWindow, OtherSillsWindow },
+  components: { ProgrammingWindow, OtherSillsWindow, Heading },
   setup() {},
   data(): ComponentData {
     return {
@@ -61,36 +63,6 @@ export default defineComponent({
   width: 100vw;
   height: 100%;
   overflow: hidden;
-
-  .title {
-    width: 100%;
-    p {
-      color: white;
-      font-weight: 600;
-      font-size: 36px;
-      letter-spacing: 1px;
-
-      .slash {
-        color: #081bc1;
-      }
-    }
-  }
-
-  @media screen and (max-width: 992px) {
-    .title {
-      width: 100%;
-      margin-left: 2%;
-      p {
-        color: white;
-        font-weight: 600;
-        font-size: 20px;
-        letter-spacing: 1px;
-
-        .slash {
-          color: #081bc1;
-        }
-      }
-    }
-  }
+  position: relative;
 }
 </style>

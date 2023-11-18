@@ -1,25 +1,23 @@
 <template>
-  <div
-    class="container-fluid skills-container d-flex flex-column align-items-center"
-  >
-    <div class="title d-flex justify-content-start mt-2">
-      <span class="description">
-        <p><span class="slash">/</span> MY PROJECTS</p>
-        <h1>It is my portfolio</h1>
-      </span>
-    </div>
+  <div class="container mb-2 d-flex flex-column">
+    <span
+      class="d-flex justify-content-center justify-content-lg-start custom-width"
+      ><heading>My projects</heading></span
+    >
+
     <div
       class="icons d-flex justify-content-center justify-content-lg-end gap-3"
     >
       <span
         v-if="leftArrowVisible"
         class="icon-circle d-flex justify-content-center align-items-center"
-        ><i
+      >
+        <i
           class="fas fa-angle-left"
           style="color: white"
           @click="scrollLeft"
-        ></i
-      ></span>
+        ></i>
+      </span>
       <span
         v-if="rightArrowVisible"
         class="icon-circle d-flex justify-content-center align-items-center"
@@ -31,26 +29,45 @@
         ></i>
       </span>
     </div>
-    <div class="scrollable-list mt-4" ref="listContainer">
-      <ul class="d-flex gap-5 flex-row mt-5" style="list-style: none">
-        <li><projectElement></projectElement></li>
-        <li><projectElement></projectElement></li>
-        <li><projectElement></projectElement></li>
-        <li><projectElement></projectElement></li>
-        <li><projectElement></projectElement></li>
-        <li><projectElement></projectElement></li>
-        <li><projectElement></projectElement></li>
-      </ul>
-    </div>
+  </div>
+  <div
+    class="scrollable-list mt-4"
+    style="margin: 0; padding: 0"
+    ref="listContainer"
+  >
+    <ul
+      class="d-flex gap-5 flex-row mt-5"
+      style="list-style: none"
+      :class="{
+        mg_left: !leftArrowVisible,
+        'mg_left-off': leftArrowVisible,
+      }"
+    >
+      <li
+        v-for="(item, index) in projectElemenetList"
+        :key="index"
+        @mouseover="hoverElementEffect(index)"
+        @mouseleave="resetElementEffect()"
+      >
+        <projectElement
+          :class="{
+            highlighted: index === hoveredIndex,
+            'not-highlighted': index !== hoveredIndex && hoveredEffect,
+            'not-highlighted-off': !hoveredEffect,
+          }"
+        ></projectElement>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import Heading from "./elements/heading.vue";
 import projectElement from "./MyProjectsSection/projectElement.vue";
 
 export default defineComponent({
-  components: { projectElement },
+  components: { projectElement, Heading },
   mounted() {
     (this.$refs.listContainer as HTMLElement).addEventListener(
       "scroll",
@@ -62,9 +79,20 @@ export default defineComponent({
       leftArrowVisible: false,
       rightArrowVisible: true,
       listContainer: this.$refs.listContainer as HTMLElement,
+      projectElemenetList: [1, 2, 3, 4, 5, 6, 7],
+      hoveredIndex: null,
+      hoveredEffect: false,
     };
   },
   methods: {
+    hoverElementEffect(index: any) {
+      this.hoveredIndex = index;
+      this.hoveredEffect = true;
+    },
+    resetElementEffect() {
+      this.hoveredIndex = null;
+      this.hoveredEffect = false;
+    },
     handleScroll() {
       const listContainer = this.$refs.listContainer as HTMLElement;
       if (
@@ -107,37 +135,17 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang="scss">
-@import "../styles/GlobalStyles.scss";
-.skills-container {
+<style lang="scss" scoped>
+.container {
+  width: 100vw;
   height: 100%;
-  min-height: 120vh;
-  background-color: $second-background-color;
-  justify-content: center;
-  .title {
-    width: 80%;
-    .description {
-      h1 {
-        color: white;
-        letter-spacing: 1px;
-      }
-      p {
-        color: white;
-        font-weight: 600;
-        font-size: 24px;
-        letter-spacing: 1px;
+  overflow: hidden;
+  position: relative;
 
-        .slash {
-          color: #081bc1;
-        }
-      }
-    }
-  }
   .icons {
     width: 100%;
     justify-content: center;
     align-items: center;
-    margin-right: 20%;
 
     .icon-circle {
       background-color: #081bc1;
@@ -153,48 +161,36 @@ export default defineComponent({
       }
     }
   }
-  .scrollable-list {
-    overflow-x: auto;
-    white-space: nowrap;
-    width: 100%;
-    height: 100vh;
-  }
-  .scrollable-list::-webkit-scrollbar {
-    size: 0;
-  }
+}
+
+.scrollable-list {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+.scrollable-list::-webkit-scrollbar {
+  width: 0px;
+}
+.mg_left {
+  margin-left: 15%;
+  transition: 0.3s ease-in;
+}
+.mg_left-off {
+  margin-left: 0%;
+  transition: 0.3s ease-in;
 }
 
 @media screen and (max-width: 992px) {
-  .skills-container {
-    .title {
-      margin-left: 2%;
-      width: 100%;
-      .description {
-        margin-left: 5%;
-        h1 {
-          color: white;
-          font-size: 28px;
-          justify-self: center;
-        }
-        p {
-          color: white;
-          font-weight: 600;
-          font-size: 16px;
-
-          .slash {
-            color: #081bc1;
-          }
-        }
-      }
-    }
-    .icons {
-      order: 3;
-      margin: 0;
-    }
-
-    .scrollable-list {
-      height: 100%;
-    }
+  .icons {
+    order: 3;
+    margin: 0;
+  }
+  .object_marginLeft {
+    margin-left: 0%;
+  }
+  .scrollable-list {
+    height: 100%;
   }
 }
 </style>
