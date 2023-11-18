@@ -42,8 +42,6 @@
                   <i
                     v-for="(item, index) in iconsList"
                     :key="index"
-                    @mouseover="hoverElementEffect(index)"
-                    @mouseleave="resetElementEffect()"
                     :class="{
                       highlighted: index === hoveredIndex,
                       'not-highlighted':
@@ -51,6 +49,8 @@
                       'not-highlighted-off': !hoveredEffect,
                       [item]: true,
                     }"
+                    @mouseover="hoverElementEffect(index)"
+                    @mouseleave="resetElementEffect()"
                   ></i>
                 </span>
               </div>
@@ -100,7 +100,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/GlobalStyles.scss";
+@import "..//styles/GlobalStyles.scss";
 .custom-container {
   width: 100vw;
   height: 100vh;
