@@ -1,12 +1,13 @@
 <template>
-  <div class="container mb-2 d-flex flex-column">
-    <span
-      class="d-flex justify-content-center justify-content-lg-start custom-width"
-      ><heading>My projects</heading></span
-    >
-
+  <div class="cont d-flex flex-column">
+    <div class="container mb-2 d-flex flex-column mt-5">
+      <span
+        class="d-flex justify-content-center justify-content-lg-start custom-width"
+        ><heading>My projects</heading></span
+      >
+    </div>
     <div
-      class="icons d-flex justify-content-center justify-content-lg-end gap-3"
+      class="icons d-flex justify-content-center justify-content-lg-end gap-3 pe-0 pb-2 pb-lg-0 pe-lg-3"
     >
       <span
         v-if="leftArrowVisible"
@@ -29,35 +30,35 @@
         ></i>
       </span>
     </div>
-  </div>
-  <div
-    class="scrollable-list mt-4"
-    style="margin: 0; padding: 0"
-    ref="listContainer"
-  >
-    <ul
-      class="d-flex gap-5 flex-row mt-5"
-      style="list-style: none"
-      :class="{
-        mg_left: !leftArrowVisible,
-        'mg_left-off': leftArrowVisible,
-      }"
+    <div
+      class="scrollable-list"
+      style="margin: 0; padding: 0"
+      ref="listContainer"
     >
-      <li
-        v-for="(item, index) in projectElemenetList"
-        :key="index"
-        @mouseover="hoverElementEffect(index)"
-        @mouseleave="resetElementEffect()"
+      <ul
+        class="d-flex gap-5 flex-row mt-5 mb-5"
+        style="list-style: none"
+        :class="{
+          mg_left: !leftArrowVisible,
+          'mg_left-off': leftArrowVisible,
+        }"
       >
-        <projectElement
-          :class="{
-            highlighted: index === hoveredIndex,
-            'not-highlighted': index !== hoveredIndex && hoveredEffect,
-            'not-highlighted-off': !hoveredEffect,
-          }"
-        ></projectElement>
-      </li>
-    </ul>
+        <li
+          v-for="(item, index) in projectElemenetList"
+          :key="index"
+          @mouseover="hoverElementEffect(index)"
+          @mouseleave="resetElementEffect()"
+        >
+          <projectElement
+            :class="{
+              highlighted: index === hoveredIndex,
+              'not-highlighted': index !== hoveredIndex && hoveredEffect,
+              'not-highlighted-off': !hoveredEffect,
+            }"
+          ></projectElement>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -141,24 +142,23 @@ export default defineComponent({
   height: 100%;
   overflow: hidden;
   position: relative;
+}
+.icons {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 
-  .icons {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+  .icon-circle {
+    background-color: #081bc1;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 64px;
 
-    .icon-circle {
-      background-color: #081bc1;
-      height: 4rem;
-      width: 4rem;
-      border-radius: 64px;
-
-      i {
-        font-size: 2.5rem;
-      }
-      i:hover {
-        cursor: pointer;
-      }
+    i {
+      font-size: 2.5rem;
+    }
+    i:hover {
+      cursor: pointer;
     }
   }
 }
@@ -186,7 +186,7 @@ export default defineComponent({
     order: 3;
     margin: 0;
   }
-  .object_marginLeft {
+  .mg_left {
     margin-left: 0%;
   }
   .scrollable-list {
