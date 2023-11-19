@@ -13,6 +13,8 @@
 
     <skills v-if="!aboutMeVisibility"></skills>
     <my-projects></my-projects>
+
+    <page-footer></page-footer>
   </div>
 </template>
 
@@ -23,9 +25,10 @@ import Home from "../components/Home.vue";
 import EduExp from "../components/EduExp.vue";
 import Skills from "../components/Skills.vue";
 import MyProjects from "../components/MyProjects.vue";
+import PageFooter from "@/components/PageFooter.vue";
 
 export default defineComponent({
-  components: { Home, AboutMe, EduExp, Skills, MyProjects },
+  components: { Home, AboutMe, EduExp, Skills, MyProjects, PageFooter },
   data() {
     return {
       aboutMeVisibility: false,
