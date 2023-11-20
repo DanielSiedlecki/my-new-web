@@ -95,21 +95,17 @@ export default defineComponent({
 @media screen and (max-width: 1200px) {
   .element-container {
     white-space: nowrap;
-    background-color: red;
     min-width: 400px;
     height: 50vh;
     border-radius: 50px;
-    background-color: #1b1f24;
   }
 }
 @media screen and (max-width: 576px) {
   .element-container {
     white-space: nowrap;
-    background-color: red;
     min-width: 276px;
     height: 50vh;
     border-radius: 50px;
-    background-color: #1b1f24;
   }
 }
 </style>
